@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+/* 设计令牌：浅色明亮主题 + 靛蓝→品红渐变强调色 */
+@theme {
+  --color-background: #f7f6fc;
+  --color-foreground: #17152b;
+  --color-surface: #ffffff;
+  --color-muted: #5f5b78;
+  --color-border: #e5e1f0;
+  --color-accent-from: #6366f1;
+  --color-accent-to: #ec4899;
+}
+
+/* 平滑滚动，配合锚点导航使用 */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  /* 浅色底上的柔和彩色光晕，让整体更有朝气 */
+  background-image:
+    radial-gradient(44rem 44rem at 6% -10%, rgb(99 102 241 / 0.18), transparent 60%),
+    radial-gradient(38rem 38rem at 100% 0%, rgb(236 72 153 / 0.16), transparent 55%);
+  color: var(--color-foreground);
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-from);
+  outline-offset: 2px;
+}
